@@ -90,3 +90,4 @@ info_ekran.pack(pady=20)
 
 pencere.mainloop()
 #made by ahmet :3
+#u can change everthing

@@ -33,7 +33,7 @@ def cpu_info():
     except Exception as C:
         info_ekran.config(text=f"Error: {C}")
 
-def battary():
+def battery():
     try:
         bat = psutil.sensors_battery()
 
@@ -52,7 +52,7 @@ def battary():
 def Wifi():
     try:
         ip = socket.gethostbyname(socket.gethostname())
-        ping = subprocess.run(["ping", "-n", "1", "8.8.8.8"], capture_output=True, text=True)
+        ping = subprocess.run(["ping", "-n", "1", "1.1.1.1"], capture_output=True, text=True)
 
         if "TTL=" in ping.stdout:
             info_ekran.config(text=f"Wifi: connected\nIP: {ip}")
@@ -66,15 +66,14 @@ def Wifi():
 pencere = tk.Tk()
 pencere.title("Pc-status-tester")
 pencere.geometry("600x450")
-pencere.configure(bg="black")
 
 tk.Button(pencere, text="Disk Scan", command=disk_scan).pack(pady=5)
 tk.Button(pencere, text="System Boot time", command=cpu).pack(pady=5)
 tk.Button(pencere, text="Cpu info", command=cpu_info).pack(pady=5)
-tk.Button(pencere, text="Battary info", command=battary).pack(pady=5)
+tk.Button(pencere, text="Battary info", command=battery).pack(pady=5)
 tk.Button(pencere, text="Wifi test", command=Wifi).pack(pady=5)
 
-info_ekran = tk.Label(pencere, text="", font=("Arial", 12), bg="black", fg="white")
+info_ekran = tk.Label(pencere, text="", font=("Arial", 12),)
 info_ekran.pack(pady=20)
 
 

@@ -9,7 +9,7 @@ def disk_scan():
         disk = psutil.disk_usage("C:")
         free_gb = disk.free / (1024 ** 3)
 
-        if free_gb < 50:
+        if free_gb < 100:
             info_ekran.configure(text="Disk is too low :( clear you trashbin or useless files")
         else:
             info_ekran.configure(text=f"free space: {free_gb:.2f} GB")

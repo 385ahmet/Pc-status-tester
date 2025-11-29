@@ -3,5 +3,7 @@ A "Pc status tester" it tests wifi disk etc. u can use to check ans system fault
 To download:
 fırst clone this repo
 after installed
-go to command bar type: pip clone psuitl
+go to command bar type: pip clone psuitl customtkinter
+
+
 and now you can run this repo
